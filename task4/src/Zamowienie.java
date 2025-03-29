@@ -25,6 +25,24 @@ public class Zamowienie {
     public void setStatus(String status) {
         this.status = status;
     }
+    public int getId(){
+        return this.id;
+    }
+    public Klient getKlient(){
+        return this.klient;
+    }
+    public Produkt[] getProdukty() {
+        return this.produkty;
+    }
+    public int[] getIlosci() {
+        return this.ilosci;
+    }
+    public String getDataZamowienia() {
+        return this.dataZamowienia;
+    }
+    public String  getStatus() {
+        return this.status;
+    }
 
     public double  obliczWartoscZamowienia(){
         double wynik=0.0;
@@ -41,6 +59,8 @@ public class Zamowienie {
         }
     }
     public void wyswietlSzczegoly(){
-        System.out.println("id: " + id + "klient: " + klient.getId() + "produkty: " + produkty + "ilosci: " + ilosci + "data: " + dataZamowienia + "status: " + status);
+        for (int i = 0; i < produkty.length; i++) {
+            System.out.println("id: " + id + " klient: " + klient.getId() + " produkt: " + produkty[i].getnazwa() + " ilosc: " + ilosci[i] + " data: " + getDataZamowienia() + " status: " + getStatus() + " laczna wartosc zamowienia: " + obliczWartoscZamowienia());
     }
+}
 }
